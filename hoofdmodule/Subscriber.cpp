@@ -1,16 +1,11 @@
 #include "Subscriber.h"
-#include "SonarObject.h"
-#include "BumperObject.h"
-#include "NavigationObject.h"
-#include "MapObject.h"
-#include "RosariaObject.h"
-#include "ControllerObject.h"
-
-Subscriber::Subscriber()
+Subscriber::Subscriber(Manager* manager)
 {
+	std::cout << "subscriber";
 	/* alle subscribers aanmaken enzo*/
 }
 
 Subscriber::~Subscriber()
 {
+
 }

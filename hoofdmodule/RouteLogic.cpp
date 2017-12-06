@@ -1,7 +1,8 @@
 #include "RouteLogic.h"
-
-RouteLogic::RouteLogic()
+#include "Manager.h"
+RouteLogic::RouteLogic(Manager *manager)
 {
+	std::cout << "Route";
 }
 
 RouteLogic::~RouteLogic()

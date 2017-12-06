@@ -1,9 +1,18 @@
+#ifndef HEADERFILE_NavigationLogic
+#define HEADERFILE_NavigationLogic
+
+
+
 #include <stdlib.h> 
 #include <vector>
+#include <iostream>
+
+class Manager;
+
 class NavigationLogic
 {
 public:
-	NavigationLogic();
+	NavigationLogic(Manager* manager);
 	~NavigationLogic();
 	void startRoute();
 	void stopRoute();
@@ -19,3 +28,4 @@ private:
 	double Orientation;
 	std::vector<double> position;
 };
+#endif

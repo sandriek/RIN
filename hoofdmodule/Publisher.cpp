@@ -1,7 +1,8 @@
 #include "Publisher.h"
-
-Publisher::Publisher()
+#include "Manager.h"
+Publisher::Publisher(Manager *manager)
 {
+	std::cout << "publisher";
 }
 
 Publisher::~Publisher()

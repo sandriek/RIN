@@ -2,6 +2,7 @@
 
 MapObject::MapObject()
 {
+
 }
 
 MapObject::~MapObject()

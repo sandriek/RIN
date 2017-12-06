@@ -1,9 +1,15 @@
+#ifndef HEADERFILE_SensorLogic
+#define HEADERFILE_SensorLogic
 #include <stdlib.h> 
 #include <vector>
+#include <iostream>
+
+class Manager;
+
 class SensorLogic
 {
 public:
-	SensorLogic();
+	SensorLogic(Manager *manager);
 	~SensorLogic();
 	void updateMap();
 private:
@@ -11,3 +17,4 @@ private:
 	std::vector<bool> Bumpers;
 	std::vector<double> GPS;
 };
+#endif

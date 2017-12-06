@@ -1,7 +1,9 @@
 #include "NavigationLogic.h"
-
-NavigationLogic::NavigationLogic()
+#include "Manager.h"
+NavigationLogic::NavigationLogic(Manager* manager)
 {
+	std::cout << "nav";
+	manager->getControllerLogic();
 }
 
 NavigationLogic::~NavigationLogic()

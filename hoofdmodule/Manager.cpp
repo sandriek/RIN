@@ -1,43 +1,52 @@
 #include "Manager.h"
+#include <iostream>
 
+int main(int argc, char ** argv)
+{
+	Manager* m = new Manager();
+	Subscriber*			S = new Subscriber(m);
+	Publisher*			P = new Publisher(m);
+	SensorLogic*		sensor = new SensorLogic(m);
+	ControllerLogic*	controller = new ControllerLogic(m);
+	RouteLogic*			route = new RouteLogic(m);
+	NavigationLogic	*nav = new NavigationLogic(m);
+	while (true) {}
+	return 0;
+}
 Manager::Manager()
 {
+	std::cout << "Manager";
 }
 
 Manager::~Manager()
 {
 }
-SensorLogic Manager::getSensorLogic()
+SensorLogic * Manager::getSensorLogic()
 {
-	SensorLogic s;
-	return s;
+	return sensor;
 }
 
-ControllerLogic Manager::getControllerLogic()
+ControllerLogic * Manager::getControllerLogic()
 {
-	ControllerLogic c;
-	return c;
+	std::cout << "got ya Controller";
+	return controller;
 }
 
-NavigationLogic Manager::getNavigationLogic()
+NavigationLogic * Manager::getNavigationLogic()
 {
-	NavigationLogic n;
-	return n;
+	return nav;
 }
 
-RouteLogic Manager::getRouteLogic()
+RouteLogic * Manager::getRouteLogic()
 {
-	RouteLogic r;
-	return r;
+	return route;
 }
 
-Subscriber Manager::getSubscriber()
+Subscriber * Manager::getSubscriber()
 {
-	Subscriber s;
-	return s;
+	return S;
 }
-Publisher Manager::getPublisher()
+Publisher * Manager::getPublisher()
 {
-	Publisher p;
-	return p;
+	return P;
 }

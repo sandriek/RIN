@@ -1,7 +1,8 @@
 #include "ControllerLogic.h"
-
-ControllerLogic::ControllerLogic()
+#include "Manager.h"
+ControllerLogic::ControllerLogic(Manager* manager)
 {
+	std::cout << "controller";
 }
 
 ControllerLogic::~ControllerLogic()

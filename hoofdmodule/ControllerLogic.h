@@ -1,9 +1,14 @@
+#ifndef HEADERFILE_ControllerLogic
+#define HEADERFILE_ControllerLogic
 #include <stdlib.h> 
 #include <vector>
+#include <iostream>
+
+class Manager;
 class ControllerLogic
 {
 public:
-	ControllerLogic();
+	ControllerLogic(Manager* manager);
 	~ControllerLogic();
 	void stopRoute();
 	void resumeRoute();
@@ -12,3 +17,4 @@ public:
 private:
 	std::vector<bool> pressedButtons;
 };
+#endif
