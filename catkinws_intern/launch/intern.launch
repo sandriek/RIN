@@ -1,5 +1,6 @@
 <launch>
 //Launchfile
 	<node pkg="cad_node" type= "cad_node" name= "cad_node"/>
+	<node pkg="sonar_node" type= "sonar_node" name= "sonar_node"/>
 
 </launch>

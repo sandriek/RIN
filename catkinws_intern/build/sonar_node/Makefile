@@ -89,6 +89,17 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -122,17 +133,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/chris/RIN/catkinws_intern/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/chris/RIN/catkinws_intern/build/CMakeFiles /home/chris/RIN/catkinws_intern/build/sonar_node/CMakeFiles/progress.marks
@@ -165,6 +165,48 @@ depend:
 	cd /home/chris/RIN/catkinws_intern/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+sonar_node/CMakeFiles/sonar_node.dir/rule:
+	cd /home/chris/RIN/catkinws_intern/build && $(MAKE) -f CMakeFiles/Makefile2 sonar_node/CMakeFiles/sonar_node.dir/rule
+.PHONY : sonar_node/CMakeFiles/sonar_node.dir/rule
+
+# Convenience name for target.
+sonar_node: sonar_node/CMakeFiles/sonar_node.dir/rule
+
+.PHONY : sonar_node
+
+# fast build rule for target.
+sonar_node/fast:
+	cd /home/chris/RIN/catkinws_intern/build && $(MAKE) -f sonar_node/CMakeFiles/sonar_node.dir/build.make sonar_node/CMakeFiles/sonar_node.dir/build
+.PHONY : sonar_node/fast
+
+src/sonar_node.o: src/sonar_node.cpp.o
+
+.PHONY : src/sonar_node.o
+
+# target to build an object file
+src/sonar_node.cpp.o:
+	cd /home/chris/RIN/catkinws_intern/build && $(MAKE) -f sonar_node/CMakeFiles/sonar_node.dir/build.make sonar_node/CMakeFiles/sonar_node.dir/src/sonar_node.cpp.o
+.PHONY : src/sonar_node.cpp.o
+
+src/sonar_node.i: src/sonar_node.cpp.i
+
+.PHONY : src/sonar_node.i
+
+# target to preprocess a source file
+src/sonar_node.cpp.i:
+	cd /home/chris/RIN/catkinws_intern/build && $(MAKE) -f sonar_node/CMakeFiles/sonar_node.dir/build.make sonar_node/CMakeFiles/sonar_node.dir/src/sonar_node.cpp.i
+.PHONY : src/sonar_node.cpp.i
+
+src/sonar_node.s: src/sonar_node.cpp.s
+
+.PHONY : src/sonar_node.s
+
+# target to generate assembly for a file
+src/sonar_node.cpp.s:
+	cd /home/chris/RIN/catkinws_intern/build && $(MAKE) -f sonar_node/CMakeFiles/sonar_node.dir/build.make sonar_node/CMakeFiles/sonar_node.dir/src/sonar_node.cpp.s
+.PHONY : src/sonar_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -174,10 +216,14 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... sonar_node"
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... edit_cache"
+	@echo "... src/sonar_node.o"
+	@echo "... src/sonar_node.i"
+	@echo "... src/sonar_node.s"
 .PHONY : help
 
 

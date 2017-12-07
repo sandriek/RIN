@@ -265,4 +265,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "marvelmind_nav/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "marvelmind_nav/CMakeFiles/_marvelmind_nav_generate_messages_check_deps_beacon_pos_a.dir/DependInfo.cmake"
   "marvelmind_nav/CMakeFiles/marvelmind_nav_genlisp.dir/DependInfo.cmake"
+  "sonar_node/CMakeFiles/sonar_node.dir/DependInfo.cmake"
   )

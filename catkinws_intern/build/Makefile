@@ -815,6 +815,19 @@ marvelmind_nav_genlisp/fast:
 	$(MAKE) -f marvelmind_nav/CMakeFiles/marvelmind_nav_genlisp.dir/build.make marvelmind_nav/CMakeFiles/marvelmind_nav_genlisp.dir/build
 .PHONY : marvelmind_nav_genlisp/fast
 
+#=============================================================================
+# Target rules for targets named sonar_node
+
+# Build rule for target.
+sonar_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sonar_node
+.PHONY : sonar_node
+
+# fast build rule for target.
+sonar_node/fast:
+	$(MAKE) -f sonar_node/CMakeFiles/sonar_node.dir/build.make sonar_node/CMakeFiles/sonar_node.dir/build
+.PHONY : sonar_node/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -878,6 +891,7 @@ help:
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... _marvelmind_nav_generate_messages_check_deps_beacon_pos_a"
 	@echo "... marvelmind_nav_genlisp"
+	@echo "... sonar_node"
 .PHONY : help
 
 
