@@ -70,7 +70,7 @@ void Subscriber::sonarCallback(const std_msgs::String::ConstPtr& sonarMsg)
 
 }
 
-void Subscriber::gpsCallback()
+void Subscriber::gpsCallback(const marvelmind_nav::hedge_pos_a& hedgehog_pos_msg)
 {
 
 }

@@ -24,5 +24,5 @@ private:
 
 	void sonarCallback(const std_msgs::String::ConstPtr& sonarMsg);
 
-	void gpsCallback();
+	void gpsCallback(const marvelmind_nav::hedge_pos_a& hedgehog_pos_msg);
 };
