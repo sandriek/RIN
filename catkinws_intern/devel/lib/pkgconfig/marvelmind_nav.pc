@@ -1,0 +1,8 @@
+prefix=/home/chris/RIN/catkinws_intern/devel
+
+Name: marvelmind_nav
+Description: Description of marvelmind_nav
+Version: 1.0.6
+Cflags: -I/home/chris/RIN/catkinws_intern/devel/include -I/home/chris/RIN/catkinws_intern/src/marvelmind_nav/include/marvelmind_nav/
+Libs: -L/home/chris/RIN/catkinws_intern/devel/lib 
+Requires: message_runtime
