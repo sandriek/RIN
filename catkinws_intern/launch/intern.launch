@@ -1,0 +1,5 @@
+<launch>
+//Launchfile
+	<node pkg="cad_node" type= "cad_node" name= "cad_node"/>
+
+</launch>

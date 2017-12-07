@@ -76,7 +76,7 @@ void buildClusterMap() {
 }
 
 int main(int argc, char **argv) {
-	ros::init(argc, argv, "publiserMap");							//Publisher initialiseren
+	ros::init(argc, argv, "cad_node");							//Publisher initialiseren
 	ros::NodeHandle n;									
 	ros::Publisher pubPixel = n.advertise<std_msgs::Int32MultiArray>("pixelMap", 100);	//Aanmaken van topic voor de pixelmap.
 	ros::Publisher pubCluster = n.advertise<std_msgs::Int32MultiArray>("clusterMap", 100);	//Aanmaken van topic voor de clustermap.
