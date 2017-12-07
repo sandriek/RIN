@@ -13,6 +13,16 @@ public:
 	Subscriber(Manager* manager);
 	~Subscriber();
 
+	//Tijdelijke public variabele.
+	MapObject maps = new MapObject();
+
 private:
-	/*hier moeten nog alle callback functies*/
+	void pixelMapCallback(const std_msgs::Int32MultiArray::ConstPtr& pixelMsg);
+	void clusterMapCallback(const std_msgs::Int32MultiArray::ConstPtr& clusterMsg);
+
+	void bumperCallback(const std_msgs::String::ConstPtr& bumperMsg);
+
+	void sonarCallback(const std_msgs::String::ConstPtr& sonarMsg);
+
+	void gpsCallback();
 };
