@@ -1,0 +1,8 @@
+prefix=/home/chris/RIN/catkinws_extern/install
+
+Name: rosauth
+Description: Description of rosauth
+Version: 0.1.7
+Cflags: -I/home/chris/RIN/catkinws_extern/install/include
+Libs: -L/home/chris/RIN/catkinws_extern/install/lib 
+Requires: roscpp message_runtime

@@ -1,0 +1,8 @@
+prefix=/home/chris/RIN/catkinws_extern/devel
+
+Name: rosbridge_server
+Description: Description of rosbridge_server
+Version: 0.8.5
+Cflags: 
+Libs: -L/home/chris/RIN/catkinws_extern/devel/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/chris/RIN/catkinws_extern/install
+
+Name: roswww
+Description: Description of roswww
+Version: 0.1.10
+Cflags: 
+Libs: -L/home/chris/RIN/catkinws_extern/install/lib 
+Requires: 
