@@ -1,8 +1,0 @@
-prefix=/home/chris/RIN/catkinws_extern/install
-
-Name: rosapi
-Description: Description of rosapi
-Version: 0.8.5
-Cflags: -I/home/chris/RIN/catkinws_extern/install/include
-Libs: -L/home/chris/RIN/catkinws_extern/install/lib 
-Requires: message_runtime

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Indoor navigation robot</title>
+<script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/  eventemitter2.js"></script>
+  <script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div>
+<div>
+<nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+       <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+      <li><a href="/Pioneer-Information">Pioneer-Information</a></li>
+      <li><a href="/about">About us</a></li>
+    </ul>
+</nav>
+</div>
+<div class="row">
+  <div class="col-sm-9">
+  	<canvas id="canvasid" width="300" height="300" style="border: 4px solid #d3d3d3" onclick="map();">
+	</canvas>
+	<button type="button" onclick="listener();">Click Me!</button>
+	<script src="mapSubscriber.js"></script>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
+</div>
+</body>
+</html>

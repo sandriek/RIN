@@ -1,8 +1,0 @@
-prefix=/home/chris/RIN/catkinws_extern/devel
-
-Name: rosbridge_library
-Description: Description of rosbridge_library
-Version: 0.8.5
-Cflags: -I/home/chris/RIN/catkinws_extern/devel/include
-Libs: -L/home/chris/RIN/catkinws_extern/devel/lib 
-Requires: message_runtime std_msgs geometry_msgs

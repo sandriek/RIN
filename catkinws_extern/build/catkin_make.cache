@@ -1,2 +1,0 @@
-rosauth:rosbridge_suite/rosapi:rosbridge_suite/rosbridge_library:rosbridge_suite/rosbridge_server:rosbridge_suite/rosbridge_suite:roswww
--DCATKIN_DEVEL_PREFIX=/home/chris/RIN/catkinws_extern/devel -DCMAKE_INSTALL_PREFIX=/home/chris/RIN/catkinws_extern/install -G Unix Makefiles
