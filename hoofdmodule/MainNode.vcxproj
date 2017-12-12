@@ -124,6 +124,7 @@
     <ClInclude Include="SensorLogic.h" />
     <ClInclude Include="SonarObject.h" />
     <ClInclude Include="Subscriber.h" />
+    <ClInclude Include="Tests.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BumperObject.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="SensorLogic.cpp" />
     <ClCompile Include="SonarObject.cpp" />
     <ClCompile Include="Subscriber.cpp" />
+    <ClCompile Include="Tests.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

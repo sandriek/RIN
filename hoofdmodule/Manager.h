@@ -7,10 +7,12 @@
 #include "RouteLogic.h"
 #include "NavigationLogic.h"
 #include "Publisher.h"
+#include "Tests.h"
 
 class Manager
 {
 public:
+	int i;
 	Manager();
 	~Manager();
 	SensorLogic * getSensorLogic();
@@ -19,12 +21,14 @@ public:
 	RouteLogic * getRouteLogic();
 	Subscriber * getSubscriber();
 	Publisher *getPublisher();
+	//ros::Publisher  setpoint_pub;
 private:
 	Subscriber*			S;
 	Publisher*			P;
 	SensorLogic*		sensor;
 	ControllerLogic*	controller;
 	RouteLogic*			route;
-	NavigationLogic	* nav;
+	NavigationLogic	*	nav;
+	Tests*				test;
 };
 #endif

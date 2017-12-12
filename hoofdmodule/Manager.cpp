@@ -4,18 +4,28 @@
 int main(int argc, char ** argv)
 {
 	Manager* m = new Manager();
-	Subscriber*			S = new Subscriber(m);
-	Publisher*			P = new Publisher(m);
-	SensorLogic*		sensor = new SensorLogic(m);
-	ControllerLogic*	controller = new ControllerLogic(m);
-	RouteLogic*			route = new RouteLogic(m);
-	NavigationLogic	*nav = new NavigationLogic(m);
+	
 	while (true) {}
 	return 0;
 }
 Manager::Manager()
 {
-	std::cout << "Manager";
+	std::cout << "starting MainNode" << std::endl;
+	/*
+	ros::init(argc, argv, "Mainnode");
+	ros::NodeHandle n;
+	ros::Rate rate(10);	ros::Publisher
+	setpoint_pub = n.advertise<geometry_msgs::Twist>("setpoint", 1000);
+	*/
+			S = new Subscriber(this);
+			P = new Publisher(this);
+			sensor = new SensorLogic(this);
+			controller = new ControllerLogic(this);
+			route = new RouteLogic(this);
+			nav = new NavigationLogic(this);
+			test = new Tests(this);
+			std::cout << "All objects are created" << std::endl;
+			test->TestFirstWayPoint();
 }
 
 Manager::~Manager()
@@ -28,7 +38,6 @@ SensorLogic * Manager::getSensorLogic()
 
 ControllerLogic * Manager::getControllerLogic()
 {
-	std::cout << "got ya Controller";
 	return controller;
 }
 
@@ -50,3 +59,5 @@ Publisher * Manager::getPublisher()
 {
 	return P;
 }
+
+
