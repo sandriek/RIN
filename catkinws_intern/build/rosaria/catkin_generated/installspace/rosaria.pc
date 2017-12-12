@@ -1,0 +1,8 @@
+prefix=/home/chris/RIN/catkinws_intern/install
+
+Name: rosaria
+Description: Description of rosaria
+Version: 0.9.0
+Cflags: -I/home/chris/RIN/catkinws_intern/install/include
+Libs: -L/home/chris/RIN/catkinws_intern/install/lib 
+Requires: roscpp nav_msgs geometry_msgs sensor_msgs tf

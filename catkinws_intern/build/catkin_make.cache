@@ -1,2 +1,2 @@
-bumper_node:cad_node:main_node:marvelmind_nav:remotecontrol_node:sonar_node
+bumper_node:cad_node:main_node:marvelmind_nav:remotecontrol_node:rosaria:sonar_node
 -DCATKIN_DEVEL_PREFIX=/home/chris/RIN/catkinws_intern/devel -DCMAKE_INSTALL_PREFIX=/home/chris/RIN/catkinws_intern/install -G Unix Makefiles

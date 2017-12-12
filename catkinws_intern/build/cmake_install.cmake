@@ -123,6 +123,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/chris/RIN/catkinws_intern/build/marvelmind_nav/cmake_install.cmake")
   include("/home/chris/RIN/catkinws_intern/build/remotecontrol_node/cmake_install.cmake")
   include("/home/chris/RIN/catkinws_intern/build/sonar_node/cmake_install.cmake")
+  include("/home/chris/RIN/catkinws_intern/build/rosaria/cmake_install.cmake")
 
 endif()
 
