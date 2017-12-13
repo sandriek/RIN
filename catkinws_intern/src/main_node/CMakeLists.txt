@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(main_node)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+ add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  
+  
 )
 
 ## System dependencies are found with CMake's conventions
@@ -103,9 +105,9 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
+ INCLUDE_DIRS include
 #  LIBRARIES main_node
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+ CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -116,15 +118,37 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  #include
   ${catkin_INCLUDE_DIRS}
 )
+add_executable(main_node src/Manager.cpp)
+
+
+
+target_link_libraries(main_node ${CMAKE_CURRENT_SOURCE_DIR}/src/Subscriber.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/SensorLogic.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/src/ControllerLogic.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/src/Publisher.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/src/RouteLogic.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/src/NavigationLogic.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/src/Tests.cpp
+${catkin_LIBRARIES})
+
+
+#target_link_libraries(${CMAKE_CURRENT_SOURCE_DIR}/src/Subscriber.cpp ${catkin_LIBRARIES})
+#target_link_libraries(${CMAKE_CURRENT_SOURCE_DIR}/src/SensorLogic.cpp ${catkin_LIBRARIES})
+#target_link_libraries(${CMAKE_CURRENT_SOURCE_DIR}/src/ControllerLogic.cpp ${catkin_LIBRARIES})
+#target_link_libraries(${CMAKE_CURRENT_SOURCE_DIR}/src/Publisher.cpp ${catkin_LIBRARIES})
+#target_link_libraries(${CMAKE_CURRENT_SOURCE_DIR}/src/RouteLogic.cpp ${catkin_LIBRARIES})
+#target_link_libraries(${CMAKE_CURRENT_SOURCE_DIR}/src/NavigationLogic.cpp ${catkin_LIBRARIES}#target_link_libraries(${CMAKE_CURRENT_SOURCE_DIR}/src/Tests.cpp ${catkin_LIBRARIES})
+add_dependencies(main_node main_node)
+
 
 ## Declare a C++ library
-# add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/main_node.cpp
-# )
-
+ add_library(Subscriber
+ 	${CMAKE_CURRENT_SOURCE_DIR}/src/Subscriber.cpp
+ )
+target_link_libraries(Subscriber ${catkin_LIBRARIES})
+add_dependencies(Subscriber Subscriber)
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure

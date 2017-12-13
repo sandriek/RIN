@@ -1,5 +1,7 @@
 #include "RouteLogic.h"
 #include "Manager.h"
+#include <string> 
+#include <cmath>
 RouteLogic::RouteLogic(Manager *manager)
 {
 	this->manager = manager;
@@ -35,34 +37,42 @@ std::vector<double> RouteLogic::calculateFirstWayPoint(std::vector<double> wayPo
 	std::vector<double> closestTemp = { 0,0,0,0,0 };
 	std::vector<double> closest = { 0,0,0,0,0,0 };
 	double angle ;
-	for each (std::vector<int> WP in wayPoints)
+	for (int index = 0; index < wayPoints.size(); index++)
 	{
-		double difX = position[0] - WP[0];
-		double difY = position[1] - WP[1];
-		angle = tan(difY / difX);
+		double difX =  wayPoints[index][0] - position[0];
+		double difY =  wayPoints[index][1] - position[1];
+		
+		angle = atan(difY / difX);
 		double distance = sqrt((difY*difY) + (difX*difX));
 		if (closestTemp[3] == 0) {
 
 			for (int i = 0; i < 3; i++)
 			{
-				closest[i] = WP[i];
-				closestTemp[i] = WP[i];
+				closest[i] = wayPoints[index][i];
+				closestTemp[i] = wayPoints[index][i];
 			}
 			
 			closestTemp[3] = distance;
-			closestTemp[4] = angle;
+			closestTemp[4] = angle* (180 / 3.14159265358979323846);
+			if (difX < 0 && difY == 0) {
+				closestTemp[4] = 180;
+			}
 		}
 		if (closestTemp[3] > distance) {
 			for (int i = 0; i < 3; i++)
 			{
-				closest[i] = WP[i];
-				closestTemp[i] = WP[i];
+				closest[i] = wayPoints[index][i];
+				closestTemp[i] = wayPoints[index][i];
 			}
 			closestTemp[3] = distance;
-			closestTemp[4] = angle;
+			closestTemp[4] = angle* (180 / 3.14159265358979323846);
+			if (difX < 0 && difY == 0) {
+				closestTemp[4] = 180;
+			}
 		}
 	}
 	closest[4] = closestTemp[4];
+	
 	closest[5] = closestTemp[3];
 	return closest;
 }

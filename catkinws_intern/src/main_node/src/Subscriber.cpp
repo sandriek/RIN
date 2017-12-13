@@ -1,4 +1,7 @@
 #include "Subscriber.h"
+#include "Manager.h"
+#include <iostream>
+#include <ros/ros.h>
 Subscriber::Subscriber(Manager* manager)
 {
 	this->manager = manager;

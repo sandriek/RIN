@@ -1,3 +1,6 @@
+#ifndef HEADERFILE_Subscriber
+#define HEADERFILE_Subscriber
+
 #include "SonarObject.h"
 #include "BumperObject.h"
 #include "NavigationObject.h"
@@ -26,3 +29,4 @@ private:
 
 	void gpsCallback(/*const marvelmind_nav::hedge_pos_a& hedgehog_pos_msg*/);
 };
+#endif

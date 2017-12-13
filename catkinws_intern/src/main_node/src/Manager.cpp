@@ -1,23 +1,21 @@
 #include "Manager.h"
 #include <iostream>
-
+#include <ros/ros.h>
 
 
 int main(int argc, char ** argv)
 {
-	Manager* m = new Manager();
+	
+	Manager* m = new Manager(argc, argv);
 	
 	while (true) {}
 	return 0;
 }
-Manager::Manager()
+Manager::Manager(int argc, char ** argv)
 {
 	std::cout << "starting MainNode" << std::endl;
-	/*
-	ros::init(argc, argv, "Mainnode");
-	ros::Rate rate(10);	ros::Publisher
+
 	
-	*/
 			S = new Subscriber(this);
 			P = new Publisher(this);
 			sensor = new SensorLogic(this);

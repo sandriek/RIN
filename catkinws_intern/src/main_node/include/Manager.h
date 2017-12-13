@@ -1,6 +1,7 @@
-#pragma once
+
 #ifndef HEADERFILE_Manager
 #define HEADERFILE_Manager
+//#include <ros/ros.h>
 #include "Subscriber.h"
 #include "ControllerLogic.h"
 #include "SensorLogic.h"
@@ -21,7 +22,7 @@ public:
 	RouteLogic * getRouteLogic();
 	Subscriber * getSubscriber();
 	Publisher *getPublisher();
-	// ros::NodeHandle n;
+	ros::NodeHandle n;
 private:
 	Subscriber*			S;
 	Publisher*			P;

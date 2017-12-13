@@ -1,6 +1,7 @@
 #pragma once
 #ifndef HEADERFILE_Manager
 #define HEADERFILE_Manager
+
 #include "Subscriber.h"
 #include "ControllerLogic.h"
 #include "SensorLogic.h"
@@ -9,11 +10,12 @@
 #include "Publisher.h"
 #include "Tests.h"
 
+
 class Manager
 {
 public:
 	int i;
-	Manager();
+	Manager(int argc, char ** argv);
 	~Manager();
 	SensorLogic * getSensorLogic();
 	ControllerLogic * getControllerLogic();
@@ -21,7 +23,7 @@ public:
 	RouteLogic * getRouteLogic();
 	Subscriber * getSubscriber();
 	Publisher *getPublisher();
-	// ros::NodeHandle n;
+	
 private:
 	Subscriber*			S;
 	Publisher*			P;

@@ -1,6 +1,5 @@
 #include "Publisher.h"
 #include "Manager.h"
-//#include "ros/ros.h"
 Publisher::Publisher(Manager *manager)
 {
 	this->manager = manager;
