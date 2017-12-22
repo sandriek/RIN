@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(main_node)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+ add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  
+  
 )
 
 ## System dependencies are found with CMake's conventions
@@ -103,9 +105,9 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES main_node
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+ INCLUDE_DIRS include
+  LIBRARIES main_node Subscriber
+ CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -116,15 +118,62 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  #include
   ${catkin_INCLUDE_DIRS}
 )
+add_executable(main_node src/Manager.cpp)
+
+
+
+target_link_libraries(main_node 
+${catkin_LIBRARIES})
+
+
+add_dependencies(main_node main_node)
+
 
 ## Declare a C++ library
-# add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/main_node.cpp
-# )
+ add_library(Subscriber
+ 	${CMAKE_CURRENT_SOURCE_DIR}/src/Subscriber.cpp
+ )
+ add_library(Publisher
+ 	${CMAKE_CURRENT_SOURCE_DIR}/src/Publisher.cpp
+ )
 
+ add_library(Sensor
+ 	${CMAKE_CURRENT_SOURCE_DIR}/src/SensorLogic.cpp
+ )
+ add_library(Controller
+ 	${CMAKE_CURRENT_SOURCE_DIR}/src/ControllerLogic.cpp
+
+ ) 
+ add_library(Route
+ 	${CMAKE_CURRENT_SOURCE_DIR}/src/RouteLogic.cpp
+ )
+ add_library(Tests
+ 	${CMAKE_CURRENT_SOURCE_DIR}/src/Tests.cpp
+ ) 
+ add_library(Navigation
+ 	${CMAKE_CURRENT_SOURCE_DIR}/src/NavigationLogic.cpp
+ )
+
+
+target_link_libraries(Subscriber ${catkin_LIBRARIES})
+target_link_libraries(main_node Subscriber)
+target_link_libraries(Publisher ${catkin_LIBRARIES})
+target_link_libraries(main_node Publisher)
+target_link_libraries(Publisher Subscriber)
+
+target_link_libraries(Sensor ${catkin_LIBRARIES})
+target_link_libraries(main_node Sensor)
+target_link_libraries(Controller ${catkin_LIBRARIES})
+target_link_libraries(main_node Controller)
+target_link_libraries(Route ${catkin_LIBRARIES})
+target_link_libraries(main_node Route)
+target_link_libraries(Tests ${catkin_LIBRARIES})
+target_link_libraries(main_node Tests)
+target_link_libraries(Navigation ${catkin_LIBRARIES})
+target_link_libraries(main_node Navigation)
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
